@@ -17,7 +17,8 @@
   register: samba_reload
 
 - name: Restart vdr-addon-lifeguard-ng
-  msg: VDR Restart skipped
+  ansible.builtin.debug:
+    msg: "VDR Restart skipped"
 #  systemd:
 #    name: vdr-addon-lifeguard-ng.service
 #    state: restarted
@@ -25,11 +26,13 @@
   register: lifeguard_reload
 
 - name: Restart NFS Kernel Server
-  systemd:
-    name: nfs-server.service
-    state: restarted
-    enabled: yes
-    #masked: no
+  ansible.builtin.debug:
+    msg: "NFS Kernel Restart skipped"
+  # systemd:
+  #   name: nfs-server.service
+  #   state: restarted
+  #   enabled: yes
+  #   #masked: no
   register: nfs_reload
 
 - name: Restart sundtek.service
@@ -40,7 +43,8 @@
     masked: no
 
 - name: Restart VDR
-  msg: VDR Restart skipped
+  ansible.builtin.debug:
+    msg: "VDR Restart skipped"
 #  systemd:
 #    name: vdr.service
 #    state: restarted
