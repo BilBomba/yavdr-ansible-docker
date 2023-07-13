@@ -17,10 +17,11 @@
   register: samba_reload
 
 - name: Restart vdr-addon-lifeguard-ng
-  systemd:
-    name: vdr-addon-lifeguard-ng.service
-    state: restarted
-    enabled: yes
+  msg: VDR Restart skipped
+#  systemd:
+#    name: vdr-addon-lifeguard-ng.service
+#    state: restarted
+#    enabled: yes
   register: lifeguard_reload
 
 - name: Restart NFS Kernel Server
@@ -39,11 +40,12 @@
     masked: no
 
 - name: Restart VDR
-  systemd:
-    name: vdr.service
-    state: restarted
-    enabled: yes
-    daemon_reload: yes
+  msg: VDR Restart skipped
+#  systemd:
+#    name: vdr.service
+#    state: restarted
+#    enabled: yes
+#    daemon_reload: yes
   register: vdr_restart
 
 - name: Stop VDR
