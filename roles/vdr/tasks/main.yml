@@ -75,6 +75,7 @@
     state: present
     install_recommends: no
   notify: [ 'Restart VDR' ]
+  
 - name: ensure vdr is stopped
 #  systemd:
 #    name: vdr.service
