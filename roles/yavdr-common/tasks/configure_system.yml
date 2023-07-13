@@ -132,19 +132,17 @@
 #     state: mounted
 #     fstype: none
 #   when: not (vdr.home | realpath is match("/var/lib/vdr"))
-- name: Delete content & directory
+- name: delete content & directory
   ansible.builtin.file:
-    state: absent
     path: /home/vdr
+    state: absent
 
 - name: create link
-  tasks:
-    - name: Creating a symlink
-      ansible.builtin.file:
-        src: "/var/lib/vdr"
-        dest: "/home/vdr"
-        state: link
-        
+  ansible.builtin.file:
+    src: "/var/lib/vdr"
+    dest: "/home/vdr"
+    state: link
+
 - name: disable release-upgrade notifications
   lineinfile:
     path: /etc/update-manager/release-upgrades
