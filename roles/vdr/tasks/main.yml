@@ -76,9 +76,9 @@
     install_recommends: no
   notify: [ 'Restart VDR' ]
 - name: ensure vdr is stopped
-  systemd:
-    name: vdr.service
-    state: stopped
+#  systemd:
+#    name: vdr.service
+#    state: stopped
   notify: [ 'Start VDR' ]
 
 - name: "vdr configuration | copy remote.conf if it doesn't exist yet"
