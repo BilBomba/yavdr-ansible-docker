@@ -11,11 +11,13 @@
 #    daemon_reload: yes
 
 - name: Restart Samba
-  systemd:
-    name: smbd.service
-    state: restarted
-    enabled: yes
-    #masked: no
+  ansible.builtin.debug:
+    msg: "Restart Samba skipped"
+#  systemd:
+#    name: smbd.service
+#    state: restarted
+#    enabled: yes
+#    #masked: no
   register: samba_reload
 
 - name: Restart vdr-addon-lifeguard-ng
