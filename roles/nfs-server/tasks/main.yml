@@ -12,7 +12,7 @@
   template:
     src: templates/nfs-exports.j2
     dest: /etc/exports
-  notify: [ 'Restart NFS Kernel Server' ]
+#  notify: [ 'Restart NFS Kernel Server' ]
 
 - name: populate /etc/avahi/services
   template:
